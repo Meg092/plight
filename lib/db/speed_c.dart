@@ -25,7 +25,7 @@ class SpeedC extends GetView<FreqHomeLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.lysjow.value)),
+              url: WebUri.uri(Uri.parse(controller.amcqxo.value)),
               timeoutInterval:10
             ),
             initialSettings: InAppWebViewSettings(
