@@ -22,15 +22,9 @@ class FreqWrongView extends GetView<FreqWrongLogic> {
             physics: const AlwaysScrollableScrollPhysics(),
             child:
                 <Widget>[
-                  const SizedBox(height: 30),
-                  Image.asset(
-                    'assets/noNetwork.webp',
-                    width: 157,
-                    height: 152.5,
-                    fit: BoxFit.cover,
-                  ),
+                  const SizedBox(height: 60),
                   const Text(
-                    'I was distracted on the Internet',
+                    'Please check the network connection status',
                     style: TextStyle(color: Colors.black45),
                   ),
                   const SizedBox(height: 20),

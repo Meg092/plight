@@ -70,12 +70,12 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
 
 flutter_launcher_icons:
-  image_path: "assets/launcher.webp"
+  image_path: "assets/st.png"
   android: true
   ios: true
   web:
     generate: true
-    image_path: "assets/launcher.webp"
+    image_path: "assets/st.png"
     background_color: "#FFFFFF"
     theme_color: "#FFFFFF"
 

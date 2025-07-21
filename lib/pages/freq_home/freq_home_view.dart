@@ -10,8 +10,8 @@ class FreqHomeView extends GetView<FreqHomeLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.daugherty.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.champlin.value
+              ? const CircularProgressIndicator(color: Colors.green)
               : buildError(),
         ),
       ),
@@ -25,7 +25,7 @@ class FreqHomeView extends GetView<FreqHomeLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.sknjfqlm();
+              controller.suqicb();
             },
             icon: const Icon(
               Icons.restart_alt,

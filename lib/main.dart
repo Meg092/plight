@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:freq_spark/db/speed_c.dart';
 import 'package:freq_spark/pages/choose/choose_binding.dart';
 import 'package:freq_spark/pages/choose/choose_view.dart';
+import 'package:freq_spark/pages/freq_home/freq_home_binding.dart';
+import 'package:freq_spark/pages/freq_home/freq_home_view.dart';
 import 'package:freq_spark/pages/freq_wrong/freq_wrong_binding.dart';
 import 'package:freq_spark/pages/freq_wrong/freq_wrong_view.dart';
 import 'package:freq_spark/pages/home/home_binding.dart';
@@ -40,7 +43,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           getPages: PLight,
-          initialRoute: '/freq_tab',
+          initialRoute: '/',
           theme: ThemeData(
             useMaterial3: true,
             primaryColor: primaryColor,
@@ -85,6 +88,11 @@ class MyApp extends StatelessWidget {
 }
 List<GetPage<dynamic>> PLight = [
   GetPage(
+    name: '/',
+    page: () => FreqHomeView(),
+    binding: FreqHomeBinding(),
+  ),
+  GetPage(
     name: '/freq_tab',
     page: () => HomePage(),
     binding: HomeBinding(),
@@ -93,6 +101,10 @@ List<GetPage<dynamic>> PLight = [
     name: '/freq_setting',
     page: () => SettingPage(),
     binding: SettingBinding(),
+  ),
+  GetPage(
+    name: '/freq_speed',
+    page: () => SpeedC(),
   ),
   GetPage(
     name: '/freq_wrong',
