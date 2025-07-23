@@ -18,7 +18,7 @@ class SettingController extends GetxController {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 0.h),
             width: 300.w,
-            height: 110.h,
+            height: 130.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10.r),

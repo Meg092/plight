@@ -20,7 +20,10 @@ class ChoosePage extends GetView<ChooseController> {
         child: SingleChildScrollView(
           child: Obx(
             () =>
-                <Widget>[
+            controller.plans.value.isEmpty ? Align(child:<Widget>[
+              const SizedBox(height: 80,),
+              const Text("No plan yet, please add a plan"),
+            ].toColumn()) : <Widget>[
                   ...controller.plans.value.map((plan) {
                     return _card(
                       name: plan.name,

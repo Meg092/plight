@@ -123,7 +123,7 @@ class HomeController extends GetxController {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 0.h),
             width: 360.w,
-            height: 190.h,
+            height: 220.h,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10.r),
